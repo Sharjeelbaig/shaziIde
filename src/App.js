@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import './App.css'
+import { javascript } from '@codemirror/lang-javascript';
+import CodeMirror from '@uiw/react-codemirror';
+import Heading from "./components/Heading/Heading";
+import HireMe from "./components/HireMe/HireMe";
+import { compileJs } from "shazi-js-compiler";
 
-function App() {
+
+const Ide = () => {
+  const [input, setInput] = useState("");
+  const [outputs, setOutputs] = useState([]);
+
+  
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Heading />
+      <div className="ide-container">
+        <CodeMirror
+        className="ide-input"
+        value={input}
+        theme={'dark'}
+        extensions={[javascript({ jsx: true })]}
+        onChange={(text)=>{setInput(text)}}
+    />
+        <div className="ide-output" id="output">
+          {outputs.map((output, index) => (
+            <div key={index}>{output}</div>
+          ))}
+        </div>
+      </div>
+      <button onClick={() => {compileJs(input,setOutputs)}} className="ide-evaluate-button">
+        Evaluate
+      </button>
+      <HireMe />
     </div>
   );
-}
+};
 
-export default App;
+export default Ide;
