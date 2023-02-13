@@ -4,7 +4,7 @@ import { javascript } from '@codemirror/lang-javascript';
 import CodeMirror from '@uiw/react-codemirror';
 import Heading from "./components/Heading/Heading";
 import HireMe from "./components/HireMe/HireMe";
-import { compileJs } from "shazi-js-compiler";
+import { compileJsSafely }  from "shazi-js-compiler";
 
 
 const Ide = () => {
@@ -30,7 +30,7 @@ const Ide = () => {
           ))}
         </div>
       </div>
-      <button onClick={() => {compileJs(input,setOutputs)}} className="ide-evaluate-button">
+      <button onClick={() => {compileJsSafely(input,setOutputs)}} className="ide-evaluate-button">
         Evaluate
       </button>
       <HireMe />
