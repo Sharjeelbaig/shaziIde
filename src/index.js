@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { Helmet } from 'react-helmet';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Helmet>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9365494914079418"
+     crossorigin="anonymous"></script>
+     
+    </Helmet>
     <App />
   </React.StrictMode>
 );
