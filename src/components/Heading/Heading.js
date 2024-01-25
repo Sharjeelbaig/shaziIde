@@ -9,7 +9,7 @@ function Heading() {
         <p className="packaging-text">By Sharjeel Baig</p>
         <div className="social-icons">
           <a href="https://github.com/Sharjeelbaig"><FaGithub color="white" /></a>
-          <a href="https://www.linkedin.com/in/sharjeel-baig-250858222/"><FaLinkedin color="white" /></a>
+          <a href="https://www.linkedin.com/in/sharjeelbaig/"><FaLinkedin color="white" /></a>
           <a href="https://www.facebook.com/sharjeel.baig.58/"><FaFacebook color="white" /></a>
         </div>
       </div>
